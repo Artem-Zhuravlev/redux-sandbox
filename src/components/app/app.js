@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import './app.css';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                App
-            </div>
-        );
-    }
+import  withBookstoreService  from '../hoc/with-bookstore-service';
+
+const App = ({bookstoreService}) => {
+    console.log(bookstoreService.getBooks());
+    return (
+        <div>
+            App
+        </div>
+    );
 }
 
-export default App;
+export default withBookstoreService()(App);
